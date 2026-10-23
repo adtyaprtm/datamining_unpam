@@ -7,9 +7,13 @@ from sklearn.datasets import load_iris
 
 
 BASE_DIR = Path(__file__).resolve().parent
+DATA_DIR = BASE_DIR / "DATA SET"
+if not DATA_DIR.is_dir():
+    DATA_DIR = BASE_DIR
+
 DATASETS = {
-    "Iris": BASE_DIR / "Iris.csv",
-    "Mobile Legends Skins": BASE_DIR / "mobile_legends_skins_dataset_1500.csv",
+    "Iris": DATA_DIR / "Iris.csv",
+    "Mobile Legends Skins": DATA_DIR / "mobile_legends_skins_dataset_1500.csv",
 }
 BINARY_CATEGORICAL_COLUMNS = {"is_limited", "is_event", "is_collab"}
 
